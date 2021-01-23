@@ -1,0 +1,132 @@
+<div class="container">
+    <section class="hero is-primary is-bold">
+        <div class="hero-body">
+            <div class="container">
+                <h2 class="subtitle">
+                    Validaciones Angular
+                </h2>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <form [formGroup]="form" novalidate (ngSubmit)="save($event)">
+            <div class="field">
+                <label class="label">Age</label>
+                <div class="control has-icons-left has-icons-right">
+                    <input class="input" type="text" formControlName="age" />
+                    <span class="icon is-small is-left">
+                        <i class="fas fa-user"></i>
+                    </span>
+                    <span class="icon is-small is-right">
+                        <i class="fas fa-check"></i>
+                    </span>
+                </div>
+                <p class="help is-success">This username is available</p>
+                {{ form.get("age").errors | json }}
+            </div>     
+            <div class="field">
+                <label class="label">price</label>
+                <div class="control has-icons-left has-icons-right">
+                    <input class="input" type="text" formControlName="price" />
+                    <span class="icon is-small is-left">
+                        <i class="fas fa-user"></i>
+                    </span>
+                    <span class="icon is-small is-right">
+                        <i class="fas fa-check"></i>
+                    </span>
+                </div>
+                <p class="help is-success">This username is available</p>
+                {{ form.get("price").errors | json }}
+            </div>        
+        
+            <div class="field">
+                <label class="label">name</label>
+                <div class="control has-icons-left has-icons-right">
+                    <input class="input" type="text" formControlName="name" />
+                    <span class="icon is-small is-left">
+                        <i class="fas fa-at"></i>
+                    </span>
+                </div>
+                {{ form.get("name").errors | json }}
+            </div>
+            <div class="field">
+                <label class="label">Email</label>
+                <div class="control has-icons-left has-icons-right">
+                    <input class="input" type="text" formControlName="email" />
+                    <span class="icon is-small is-left">
+                        <i class="fas fa-at"></i>
+                    </span>
+                </div>
+                {{ form.get("email").errors | json }}
+                <div *ngIf="emailFieldIsInvalid">
+                    <p class="help is-danger" *ngIf="emailField.hasError('required')">
+                        Es un campo requerido
+                    </p>
+                    <p class="help is-danger" *ngIf="emailField.hasError('email')">
+                        No es un email
+                    </p>
+                    <p class="help is-danger" *ngIf="emailField.hasError('notAvailable')">
+                        Email no esta disponibñe
+                    </p>
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Texto largo:</label>
+                <div class="control">
+                    <textarea class="textarea" cols="30" rows="2" [class.is-danger]="textFieldIsInvalid"
+                        [class.is-success]="textFieldIsValid" formControlName="text"></textarea>
+                    {{ textField.value.length }}/80
+                </div>
+                <div *ngIf="textFieldIsInvalid">
+                    <p class="help is-danger" *ngIf="textField.hasError('required')">
+                        Es un campo requerido
+                    </p>
+                    <p class="help is-danger" *ngIf="textField.hasError('maxlength')">
+                        Te pasaste, máximo deben haber 80 caracteres.
+                    </p>
+                </div>
+                {{ form.get("text").errors | json }}
+            </div>
+            <div class="field">
+                <label class="label">Category:</label>
+                <div class="control">
+                    <div class="select">
+                        <select formControlName="category">
+                            <option value="1">Category 1</option>
+                            <option value="2">Category 2</option>
+                            <option value="3">Category 3</option>
+                        </select>
+                    </div>
+                </div>
+                {{ form.get("category").errors | json }}
+            </div>
+            <div class="field">
+                <label class="label">Genero:</label>
+                <div class="control">
+                    <label class="radio">
+                        <input type="radio" name="gender" formControlName="gender" value="male" />
+                        Male
+                    </label>
+                    <label class="radio">
+                        <input type="radio" name="gender" formControlName="gender" value="female" />
+                        Female
+                    </label>
+                    <label class="radio">
+                        <input type="radio" name="gender" formControlName="gender" value="other" />
+                        Other
+                    </label>
+                </div>
+                {{ form.get("gender").errors | json }}
+            </div>
+            <div class="field is-grouped">
+                <div class="control">
+                    <button class="button is-primary" type="submit">Guardar</button>
+                </div>
+                <div class="control">
+                    <button class="button is-light" type="reset">Cancelar</button>
+                </div>
+            </div>
+        </form>
+    </section>
+</div>
