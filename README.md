@@ -1,27 +1,11 @@
-# AngularForms
+# Angular Formularios reactivos
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.20.
 
-## Development server
+# pasos
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+1. https://gist.github.com/nicobytes/4b583a0f5a769c566ba7659170d48f6b
+2. https://gist.github.com/nicobytes/8d588ec2e7e599bbb3fd59a993fdd336
+3. https://gist.github.com/nicobytes/6b7e3446258e19a88010cee85b33b41f
+4. https://gist.github.com/nicobytes/3cb36c3725b3aa5ef5ede79098f166c5
+5. https://gist.github.com/nicobytes/12eba093a5f3392ee8772bc70c6cb512
+6. https://gist.github.com/nicobytes/b37d79a9eb60fd931e59d1f9529052cf
